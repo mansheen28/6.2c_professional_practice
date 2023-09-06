@@ -4,47 +4,53 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Use a build automation tool (e.g., Maven) to compile and package your code.
+                    echo "Building..."
             }
+                post{
+                always{
+                        mail to: "mansheenkaur2000@gmail.com",
+                        subject: "Build status Email",
+                        body: "Build log attached!"
+                }
+}
         }
         stage('Unit and Integration Tests') {
             steps {
+echo "Building..."
                 // Run unit tests and integration tests using appropriate test automation tools.
             }
         }
         stage('Code Analysis') {
             steps {
+echo "Building..."
                 // Integrate a code analysis tool (e.g., SonarQube) to analyze your code.
             }
         }
         stage('Security Scan') {
             steps {
+echo "Building..."
                 // Perform a security scan using a security analysis tool (e.g., OWASP ZAP).
             }
         }
         stage('Deploy to Staging') {
             steps {
+echo "Building..."
                 // Deploy the application to a staging server (e.g., AWS EC2).
             }
         }
         stage('Integration Tests on Staging') {
             steps {
+echo "Building..."
                 // Run integration tests on the staging environment.
             }
         }
         stage('Deploy to Production') {
             steps {
+echo "Building..."
                 // Deploy the application to a production server (e.g., AWS EC2).
             }
         }
     }
 
-    post {
-        failure {
-            // Send notification email with logs on failure.
-        }
-        success {
-            // Send notification email with logs on success.
-        }
     }
-}
+
