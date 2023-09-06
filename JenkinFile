@@ -14,51 +14,27 @@ pipeline {
                 }
 }
         }
-        stage('Unit and Integration Tests') {
+        stage('Test') {
             steps {
-echo "Building..."
-                // Run unit tests and integration tests using appropriate test automation tools.
+echo "Testing..."
+                
             }
         }
-        stage('Code Analysis') {
+     
+        
+        stage('Deploy') {
             steps {
-echo "Building..."
-                // Integrate a code analysis tool (e.g., SonarQube) to analyze your code.
+echo "Deploying..."
+                
             }
         }
-        stage('Security Scan') {
-            steps {
-echo "Building..."
-                // Perform a security scan using a security analysis tool (e.g., OWASP ZAP).
-            }
-        }
-        stage('Deploy to Staging') {
-            steps {
-echo "Building..."
-                // Deploy the application to a staging server (e.g., AWS EC2).
-            }
-        }
-        stage('Integration Tests on Staging') {
-            steps {
-echo "Building..."
-                // Run integration tests on the staging environment.
-            }
-        }
-        stage('Deploy to Production') {
-            steps {
-echo "Building..."
-                // Deploy the application to a production server (e.g., AWS EC2).
-            }
-        }
-    }
-post {
-        failure {
-            echo "failure"
-        }
-        success {
-            echo "sucess"
-        }
-    }
+        
+        
+    
+
+    
 
     }
+
+}
 
