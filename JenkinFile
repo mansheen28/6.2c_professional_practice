@@ -51,6 +51,14 @@ echo "Building..."
             }
         }
     }
+post {
+        failure {
+            // Send notification email with logs on failure.
+        }
+        success {
+            // Send notification email with logs on success.
+        }
+    }
 
     }
 
