@@ -16,7 +16,7 @@ pipeline {
         }
             stage('Unit and Integration Test') {
             steps {
-            echo "Unit Testing..."   
+            echo "Unit Testing"   
             }
         }
         stage('Code Analysis') {
