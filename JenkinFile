@@ -14,26 +14,36 @@ pipeline {
                 }
 }
         }
-        stage('Test') {
+            stage('Unit and Integration Test') {
             steps {
-echo "Testing..."
-                
+            echo "Unit Testing..."   
             }
         }
-     
-        
-        stage('Deploy') {
+        stage('Code Analysis') {
             steps {
-echo "Deploying."
-                
+            echo "Analysis." 
             }
         }
-        
-        
-    
-
-    
-
+        stage('Security Scan') {
+            steps {
+            echo "Scanning." 
+            }
+        }
+ stage('Deploy to staging') {
+            steps {
+            echo "Deploy to staging." 
+            }
+        }
+ stage('Integration Tests on Staging') {
+            steps {
+            echo "Integrated." 
+            }
+        }
+         stage('Deploy to Production') {
+            steps {
+            echo "Deploy to Production." 
+            }
+        }
     }
 
 }
