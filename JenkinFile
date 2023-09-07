@@ -36,7 +36,7 @@ pipeline {
         }
  stage('Integration Tests on Staging') {
             steps {
-            echo "Integrated." 
+            echo "Integrated test on staging." 
             }
         }
          stage('Deploy to Production') {
